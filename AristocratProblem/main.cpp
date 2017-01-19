@@ -33,12 +33,14 @@ int main(int argc, const char * argv[]) {
     
     PopulateProductList();
     
-    TEST_AUS_BRANCH();
-    TEST_KART();
-    TEST_CHECKOUT();
-    TEST_MAKE_PAYMENT();
-    TEST_DELIVER_ORDERS();
-    TEST_NZ_BRANCH();
+//    TEST_AUS_BRANCH();
+//    TEST_KART();
+//    TEST_CHECKOUT();
+//    TEST_MAKE_PAYMENT();
+//    TEST_DELIVER_ORDERS();
+//    TEST_NZ_BRANCH();
+    
+    SCENARIO();
     
     std::cout<<"\n////////////////////////////\n// END"<<std::endl;
     std::cout<<"\n";
@@ -215,4 +217,130 @@ void TEST_NZ_BRANCH() {
     kart->AddKartItem(nzBranch->GetItem(4), 1);
     kart->AddKartItem(nzBranch->GetItem(0), 1);
     kart->PrintKartItems();
+}
+
+// SCENARIO DESCRIBED IN PROBLEM
+// The following method describes the scenario from the original problem
+void SCENARIO() {
+    std::cout<<"\n////////////////////////////\n// SCENARIO DESCRIBED IN PROBLEM"<<std::endl;
+    
+    // INITIALISE REGIONAL BRANCHES
+    AustraliaBranch* ausBranch = new AustraliaBranch();
+    ausBranch->SetProductList(&productList);
+    ausBranch->SetExchangRate(0.75f);
+    ausBranch->SetProfitMargin(0.0f);
+    ausBranch->GenerateItemList();
+    
+    NZBranch* nzBranch = new NZBranch();
+    nzBranch->SetProductList(&productList);
+    nzBranch->SetExchangRate(0.72f);
+    nzBranch->SetProfitMargin(0.0f);
+    nzBranch->GenerateItemList();
+    
+    // INITIALISE CUSTOMERS AND SET KART CONTENTS
+    
+    Customer* customerA = new Customer();
+    Kart* kartA = new Kart();
+    customerA->SetKart(kartA);
+    
+    kartA->AddKartItem(ausBranch->GetItemList()[1], 1);
+    kartA->AddKartItem(ausBranch->GetItemList()[3], 2);
+    kartA->AddKartItem(ausBranch->GetItemList()[4], 1);
+    
+    Customer* customerB = new Customer();
+    Kart* kartB = new Kart();
+    customerB->SetKart(kartB);
+    
+    kartB->AddKartItem(nzBranch->GetItem(2), 1);
+    kartB->AddKartItem(nzBranch->GetItem(3), 4);
+    kartB->AddKartItem(nzBranch->GetItem(4), 1);
+    kartB->AddKartItem(nzBranch->GetItem(5), 1);
+    
+    Customer* customerC = new Customer();
+    Kart* kartC = new Kart();
+    customerC->SetKart(kartC);
+    
+    kartC->AddKartItem(ausBranch->GetItemList()[4],1);
+    
+    // CHECKOUT KARTS
+    std::cout<<"\n////////////////////////////\n// CHECKOUT_KARTS"<<std::endl;
+    
+    std::cout<<"\n////////////////////////////\n// ORDER_A"<<std::endl;
+    Order* orderA = ausBranch->Checkout(customerA->GetKart());
+    orderA->PrintOrder();
+    
+    std::cout<<"\n////////////////////////////\n// ORDER_B"<<std::endl;
+    Order* orderB = nzBranch->Checkout(customerB->GetKart());
+    orderB->PrintOrder();
+    
+    std::cout<<"\n////////////////////////////\n// ORDER_C"<<std::endl;
+    Order* orderC = ausBranch->Checkout(customerC->GetKart());
+    orderC->PrintOrder();
+    
+    // CUSTOMER A MAKES PAYMENT
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_A_MAKES_PAYMENT"<<std::endl;
+    customerA->MakePayment(orderA);
+    
+    // CUSTOMER CHECK ORDER STATUS
+    // Only CustomerA has made payment
+    // Expect only CustomerA to return an OrderStatus
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_CHECK_ORDER_STATUS"<<std::endl;
+    std::cout<<"\n// CUSTOMER_A: ";
+    customerA->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_B: ";
+    customerB->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_C: ";
+    customerC->CheckOrderStatus();
+    
+    // BRANCH PREPARES ORDERS
+    std::cout<<"\n////////////////////////////\n// BRANCH_PREPARES_ORDERS"<<std::endl;
+    ausBranch->PrepareOrders();
+    nzBranch->PrepareOrders();
+    
+    // CUSTOMER CHECK ORDER STATUS
+    // Only one order has been paid
+    // Expect only one order will change status to READY_FOR_DELIVERY
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_CHECK_ORDER_STATUS"<<std::endl;
+    std::cout<<"\n// CUSTOMER_A";
+    customerA->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_B";
+    customerB->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_C";
+    customerC->CheckOrderStatus();
+    
+    // CUSTOMERS B AND C MAKE PAYMENT
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_B_AND_C_MAKE_PAYMENT"<<std::endl;
+    customerB->MakePayment(orderB);
+    customerC->MakePayment(orderC);
+    
+    // BRANCH PREPARES ORDERS
+    std::cout<<"\n////////////////////////////\n// BRANCH_PREPARES_ORDERS"<<std::endl;
+    ausBranch->PrepareOrders();
+    nzBranch->PrepareOrders();
+    
+    // CUSTOMER CHECK ORDER STATUS
+    // Only one order has been paid
+    // Expect all orders will change status to READY_FOR_DELIVERY
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_CHECK_ORDER_STATUS"<<std::endl;
+    std::cout<<"\n// CUSTOMER_A";
+    customerA->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_B";
+    customerB->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_C";
+    customerC->CheckOrderStatus();
+    
+    // DELIVER ORDERS
+    std::cout<<"\n////////////////////////////\n// DELIVER_ORDERS"<<std::endl;
+    ausBranch->DeliverOrders();
+    nzBranch->DeliverOrders();
+    
+    // CUSTOMER CHECK ORDER STATUS
+    // Expect all orders DELIVERED
+    std::cout<<"\n////////////////////////////\n// CUSTOMER_CHECK_ORDER_STATUS"<<std::endl;
+    std::cout<<"\n// CUSTOMER_A";
+    customerA->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_B";
+    customerB->CheckOrderStatus();
+    std::cout<<"\n// CUSTOMER_C";
+    customerC->CheckOrderStatus();
 }
