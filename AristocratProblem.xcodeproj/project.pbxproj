@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F71A6B301E30395D0031454A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B2F1E30395D0031454A /* main.cpp */; };
+		F71A6B381E3039ED0031454A /* AustraliaBranch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B361E3039ED0031454A /* AustraliaBranch.cpp */; };
+		F71A6B3B1E303A2C0031454A /* Branch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B391E303A2C0031454A /* Branch.cpp */; };
+		F71A6B3E1E303A650031454A /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B3C1E303A650031454A /* Component.cpp */; };
+		F71A6B411E303A9F0031454A /* Customer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B3F1E303A9F0031454A /* Customer.cpp */; };
+		F71A6B441E303AE70031454A /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B421E303AE70031454A /* Item.cpp */; };
+		F71A6B471E303B1E0031454A /* Kart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B451E303B1E0031454A /* Kart.cpp */; };
+		F71A6B4A1E303B5C0031454A /* KartItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B481E303B5C0031454A /* KartItem.cpp */; };
+		F71A6B4D1E303B9C0031454A /* NZBranch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B4B1E303B9C0031454A /* NZBranch.cpp */; };
+		F71A6B501E303BD90031454A /* Order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B4E1E303BD90031454A /* Order.cpp */; };
+		F71A6B531E303C190031454A /* Product.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B511E303C190031454A /* Product.cpp */; };
+		F71A6B561E303C5D0031454A /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F71A6B541E303C5D0031454A /* System.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +36,28 @@
 /* Begin PBXFileReference section */
 		F71A6B2C1E30395D0031454A /* AristocratProblem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AristocratProblem; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71A6B2F1E30395D0031454A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F71A6B361E3039ED0031454A /* AustraliaBranch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AustraliaBranch.cpp; sourceTree = "<group>"; };
+		F71A6B371E3039ED0031454A /* AustraliaBranch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AustraliaBranch.hpp; sourceTree = "<group>"; };
+		F71A6B391E303A2C0031454A /* Branch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Branch.cpp; sourceTree = "<group>"; };
+		F71A6B3A1E303A2C0031454A /* Branch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Branch.hpp; sourceTree = "<group>"; };
+		F71A6B3C1E303A650031454A /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		F71A6B3D1E303A650031454A /* Component.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
+		F71A6B3F1E303A9F0031454A /* Customer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Customer.cpp; sourceTree = "<group>"; };
+		F71A6B401E303A9F0031454A /* Customer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Customer.hpp; sourceTree = "<group>"; };
+		F71A6B421E303AE70031454A /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
+		F71A6B431E303AE70031454A /* Item.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item.hpp; sourceTree = "<group>"; };
+		F71A6B451E303B1E0031454A /* Kart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Kart.cpp; sourceTree = "<group>"; };
+		F71A6B461E303B1E0031454A /* Kart.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Kart.hpp; sourceTree = "<group>"; };
+		F71A6B481E303B5C0031454A /* KartItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KartItem.cpp; sourceTree = "<group>"; };
+		F71A6B491E303B5C0031454A /* KartItem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KartItem.hpp; sourceTree = "<group>"; };
+		F71A6B4B1E303B9C0031454A /* NZBranch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NZBranch.cpp; sourceTree = "<group>"; };
+		F71A6B4C1E303B9C0031454A /* NZBranch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NZBranch.hpp; sourceTree = "<group>"; };
+		F71A6B4E1E303BD90031454A /* Order.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Order.cpp; sourceTree = "<group>"; };
+		F71A6B4F1E303BD90031454A /* Order.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Order.hpp; sourceTree = "<group>"; };
+		F71A6B511E303C190031454A /* Product.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Product.cpp; sourceTree = "<group>"; };
+		F71A6B521E303C190031454A /* Product.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Product.hpp; sourceTree = "<group>"; };
+		F71A6B541E303C5D0031454A /* System.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		F71A6B551E303C5D0031454A /* System.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,28 @@
 			isa = PBXGroup;
 			children = (
 				F71A6B2F1E30395D0031454A /* main.cpp */,
+				F71A6B361E3039ED0031454A /* AustraliaBranch.cpp */,
+				F71A6B371E3039ED0031454A /* AustraliaBranch.hpp */,
+				F71A6B391E303A2C0031454A /* Branch.cpp */,
+				F71A6B3A1E303A2C0031454A /* Branch.hpp */,
+				F71A6B3C1E303A650031454A /* Component.cpp */,
+				F71A6B3D1E303A650031454A /* Component.hpp */,
+				F71A6B3F1E303A9F0031454A /* Customer.cpp */,
+				F71A6B401E303A9F0031454A /* Customer.hpp */,
+				F71A6B421E303AE70031454A /* Item.cpp */,
+				F71A6B431E303AE70031454A /* Item.hpp */,
+				F71A6B451E303B1E0031454A /* Kart.cpp */,
+				F71A6B461E303B1E0031454A /* Kart.hpp */,
+				F71A6B481E303B5C0031454A /* KartItem.cpp */,
+				F71A6B491E303B5C0031454A /* KartItem.hpp */,
+				F71A6B4B1E303B9C0031454A /* NZBranch.cpp */,
+				F71A6B4C1E303B9C0031454A /* NZBranch.hpp */,
+				F71A6B4E1E303BD90031454A /* Order.cpp */,
+				F71A6B4F1E303BD90031454A /* Order.hpp */,
+				F71A6B511E303C190031454A /* Product.cpp */,
+				F71A6B521E303C190031454A /* Product.hpp */,
+				F71A6B541E303C5D0031454A /* System.cpp */,
+				F71A6B551E303C5D0031454A /* System.hpp */,
 			);
 			path = AristocratProblem;
 			sourceTree = "<group>";
@@ -118,6 +173,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71A6B561E303C5D0031454A /* System.cpp in Sources */,
+				F71A6B441E303AE70031454A /* Item.cpp in Sources */,
+				F71A6B411E303A9F0031454A /* Customer.cpp in Sources */,
+				F71A6B381E3039ED0031454A /* AustraliaBranch.cpp in Sources */,
+				F71A6B471E303B1E0031454A /* Kart.cpp in Sources */,
+				F71A6B501E303BD90031454A /* Order.cpp in Sources */,
+				F71A6B531E303C190031454A /* Product.cpp in Sources */,
+				F71A6B3E1E303A650031454A /* Component.cpp in Sources */,
+				F71A6B4D1E303B9C0031454A /* NZBranch.cpp in Sources */,
+				F71A6B3B1E303A2C0031454A /* Branch.cpp in Sources */,
+				F71A6B4A1E303B5C0031454A /* KartItem.cpp in Sources */,
 				F71A6B301E30395D0031454A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
