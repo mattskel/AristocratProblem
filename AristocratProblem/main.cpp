@@ -165,7 +165,6 @@ void TEST_MAKE_PAYMENT() {
     kart->AddKartItem(ausBranch->GetItemList()[0], 1);
     
     Order* order = ausBranch->Checkout(kart);
-    //    order->PrintOrder();
     order->PrintStatus();
     
     std::cout<<"\n// CUSTOMER_PAYMENT";
