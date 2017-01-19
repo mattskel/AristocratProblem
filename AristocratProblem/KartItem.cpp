@@ -31,6 +31,5 @@ void KartItem::PrintKartItem() {
     std::cout<<"//\n// QTY: ";
     std::cout<<m_quantity<<std::endl;
     std::cout<<"// ITEM TOTAL: $";
-    //    std::cout<<m_itemTotal<<std::endl;
     std::cout<<ceilf(m_quantity * m_item->GetSalePrice() * 100) / 100<<std::endl;
 }

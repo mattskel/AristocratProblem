@@ -6,11 +6,15 @@
 //  Copyright © 2017 Matthew Skelley. All rights reserved.
 //
 
+/*
+ * Responsible for storing KartItem instances
+ * Displays current KartItems
+ */
+
 #ifndef Kart_hpp
 #define Kart_hpp
 
 #include "Product.hpp"
-#include "Item.hpp"
 #include "System.hpp"
 #include "Component.hpp"
 #include "KartItem.hpp"
@@ -20,28 +24,19 @@
 #include <iostream>
 
 class Kart {
-    private:
-    //    std::vector<Product*> m_productList;
-    std::vector<Item*> m_itemList;
+private:
     std::vector<KartItem*> m_kartItemList;
-    public:
+public:
     Kart();
     ~Kart();
     
-    //    void AddProduct(Product* product);
-    //    void RemoveProduct(Product* product);
-    //    std::vector<Product*> GetProductList() {return m_productList;}
-    //    void PrintProducts();
-    
-    void AddItem(Item* item);
     void AddKartItem(KartItem* kartItem);
     void AddKartItem(Item* item, int quantity);
-    void RemoveItem(Item* item);
     void RemoveItem(int index);
     void RemoveKartItem(int index);
-    std::vector<Item*> GetItemList() {return m_itemList;}
+    
     std::vector<KartItem*> GetKartItemList() {return m_kartItemList;}
-    void PrintItems();
+    
     void PrintKartItems();
 };
 

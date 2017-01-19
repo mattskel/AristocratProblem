@@ -22,11 +22,6 @@ System::~System() {}
 void System::SetProductReferenceList(vector<Product*> productReferenceList) {
     m_productReferenceList = productReferenceList;
 }
-
-//void System::AddProductReference(Product* productReference) {
-//    m_productReferenceList.push_back(productReference);
-//}
-
 void System::CalcSalePrice() {
     m_salePrice = 0.0f;
     for (Product* reference : m_productReferenceList) {

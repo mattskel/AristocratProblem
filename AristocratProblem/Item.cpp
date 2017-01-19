@@ -7,7 +7,6 @@
 //
 
 #include "Item.hpp"
-//#include <iostream>
 #include <math.h>
 
 Item::Item() {

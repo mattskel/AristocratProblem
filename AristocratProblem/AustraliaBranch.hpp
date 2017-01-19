@@ -7,8 +7,9 @@
 //
 
 /*
- * Responsible for generating the Items for regional branch
+ * Responsible for generating the Items for regional Australia branch
  * Displays the items available to the customer
+ * Retrieves items by index
  */
 
 #ifndef AustraliaBranch_hpp

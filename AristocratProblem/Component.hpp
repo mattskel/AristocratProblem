@@ -6,6 +6,11 @@
 //  Copyright © 2017 Matthew Skelley. All rights reserved.
 //
 
+/*
+ * Stores a product reference
+ * Calculates the sale price based on exchange rate and profit margin
+ */
+
 #ifndef Component_hpp
 #define Component_hpp
 
@@ -14,9 +19,9 @@
 #include <stdio.h>
 
 class Component : public Item {
-    private:
+private:
     Product* m_productReference;
-    public:
+public:
     Component();
     Component(float exchangeRate);
     Component(float exchangeRate, float profitMargin);

@@ -6,6 +6,12 @@
 //  Copyright © 2017 Matthew Skelley. All rights reserved.
 //
 
+/*
+ * Handles order items and status
+ * Stores the branch and customer responsible for an order
+ * Calculates the sub total, discount and order total
+ */
+
 #ifndef Order_hpp
 #define Order_hpp
 
@@ -18,8 +24,6 @@
 #include <stdio.h>
 #include <vector>
 
-//enum class OrderStatus;
-// Forward declarations
 class Branch;
 class Customer;
 
@@ -31,25 +35,23 @@ class Order {
         READY_FOR_DELIVERY,
         DELIVERED
     };
-    private:
+private:
     OrderStatus m_orderStatus;
     float m_subTotal;
     float m_discount;
     float m_orderTotal;
-    std::vector<Product*> m_productList;
-    std::vector<Item*> m_itemList;
     std::vector<KartItem*> m_kartItemList;
     Customer* m_customer;
     Branch* m_branch;
-    public:
+public:
     Order();
-    Order(std::vector<Product*> productList);
-    Order(std::vector<Item*> itemList);
     Order(std::vector<KartItem*> kartItemList);
     ~Order();
+    
     void CalcSubTotal();
     void CalcDiscount();
     void CalcOrderTotal();
+    
     OrderStatus GetStatus() {return m_orderStatus;}
     float GetSubTotal() {return m_subTotal;}
     Customer* GetCustomer() {return m_customer;}
@@ -58,6 +60,7 @@ class Order {
     void SetCustomer(Customer* customer) {m_customer = customer;}
     void SetBranch(Branch* branch) {m_branch = branch;}
     float GetOrderTotal() {return m_orderTotal;}
+    
     void PrintStatus();
     void PrintOrder();
 };

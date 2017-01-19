@@ -7,7 +7,8 @@
 //
 
 /*
- *
+ * Responsible making payment of order
+ * Stores a kart pointer
  */
 
 #ifndef Customer_hpp
@@ -21,14 +22,12 @@
 
 class Customer {
 private:
-//    int m_ID;
     Kart* m_kart;
     std::vector<Order*> m_orderList;
 public:
     static int customerCount;
     Customer();
     ~Customer();
-//    int GetID() {return m_ID;}
     void SetKart(Kart *kart) {m_kart = kart;}
     Kart* GetKart() {return m_kart;}
     bool MakePayment(Order* order);

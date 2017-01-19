@@ -9,16 +9,9 @@
 
 #include "Product.hpp"
 
-int Product::productCount = 0;
-
-Product::Product() {
-    m_ID = productCount;
-    productCount++;
-}
+Product::Product() {}
 
 Product::Product(float cost, string description) {
-    m_ID = productCount;
-    productCount++;
     m_cost = cost;
     m_productDescription = description;
 }

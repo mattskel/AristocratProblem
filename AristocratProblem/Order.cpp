@@ -12,16 +12,6 @@
 
 Order::Order() {}
 
-Order::Order(std::vector<Product*> productList) {
-    m_productList = productList;
-    m_orderStatus = OrderStatus::AWAITING_PAYMENT;
-}
-
-Order::Order(std::vector<Item*> itemList) {
-    m_itemList = itemList;
-    m_orderStatus = OrderStatus::AWAITING_PAYMENT;
-}
-
 Order::Order(std::vector<KartItem*> kartItemList) {
     m_kartItemList = kartItemList;
     m_orderStatus = OrderStatus::AWAITING_PAYMENT;
@@ -77,10 +67,6 @@ void Order::CalcDiscount() {
 }
 
 void Order::CalcOrderTotal() {
-    //    m_orderTotal = 0.0f;
-    //    for (Item* item : m_itemList) {
-    //        m_orderTotal += item->GetSalePrice();
-    //    }
     m_orderTotal = m_subTotal - m_discount;
 }
 
